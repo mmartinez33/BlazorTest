@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Programming Projects\\GitHub\\repos\\BlazorTest\\BlazorApp1\\BlazorApp1.csproj": {}
+    "d:\\Programming Projects\\GitHub\\repos\\BlazorTest\\BlazorApp1\\BlazorApp1.csproj": {}
   },
   "projects": {
-    "D:\\Programming Projects\\GitHub\\repos\\BlazorTest\\BlazorApp1\\BlazorApp1.csproj": {
+    "d:\\Programming Projects\\GitHub\\repos\\BlazorTest\\BlazorApp1\\BlazorApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Programming Projects\\GitHub\\repos\\BlazorTest\\BlazorApp1\\BlazorApp1.csproj",
+        "projectUniqueName": "d:\\Programming Projects\\GitHub\\repos\\BlazorTest\\BlazorApp1\\BlazorApp1.csproj",
         "projectName": "BlazorApp1",
-        "projectPath": "D:\\Programming Projects\\GitHub\\repos\\BlazorTest\\BlazorApp1\\BlazorApp1.csproj",
+        "projectPath": "d:\\Programming Projects\\GitHub\\repos\\BlazorTest\\BlazorApp1\\BlazorApp1.csproj",
         "packagesPath": "C:\\Users\\Michael\\.nuget\\packages\\",
-        "outputPath": "D:\\Programming Projects\\GitHub\\repos\\BlazorTest\\BlazorApp1\\obj\\",
+        "outputPath": "d:\\Programming Projects\\GitHub\\repos\\BlazorTest\\BlazorApp1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Michael\\AppData\\Roaming\\NuGet\\NuGet.Config"

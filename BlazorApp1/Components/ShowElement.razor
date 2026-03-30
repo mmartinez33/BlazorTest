@@ -1,0 +1,16 @@
+<!--
+<div class="show-element">
+    <input type="checkbox">
+        @elementName
+</div>
+-->
+<!-- <button class="show-element">@elementName</button> -->
+<label class="switch">
+    <input type="checkbox" id="@elementName"/>
+    <span class="toggle" >@elementName</span>
+</label>
+
+@code {
+    [Parameter]
+    public string? elementName { get; set; }
+}
