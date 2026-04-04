@@ -1,6 +1,121 @@
 @page "/status"
 @rendermode InteractiveServer
+@inject AppDbContext Db
 
 <PageTitle>Status</PageTitle>
 
+<h1>Out Of Show</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Scene 1</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var element in elements)
+        {
+            @if (element.Status == false)
+            {
+                @if (element.ShowSection == "Scene 1")
+                {
+                    <tr>
+                        <td>@element.Name</td>
+                    </tr>
+                }
+            }
+        }
+    </tbody>
+</table>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Scene 2</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var element in elements)
+        {
+            @if (element.Status == false)
+            {
+                @if (element.ShowSection == "Scene 2")
+                {
+                    <tr>
+                        <td>@element.Name</td>
+                    </tr>
+                }
+            }
+        }
+    </tbody>
+</table>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Scene 3</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var element in elements)
+        {
+            @if (element.Status == false)
+            {
+                @if (element.ShowSection == "Scene 3")
+                {
+                    <tr>
+                        <td>@element.Name</td>
+                    </tr>
+                }
+            }
+        }
+    </tbody>
+</table>
+
+<!--
 <h1>Element Status</h1>
+
+<h2>Scene 1</h2>
+@foreach ( string e in elementNames)
+{
+    if( .Scene == 1)
+    {
+        if( == true)
+        {
+            hidden == true;
+        }
+    }
+}
+
+<h2>Scene 2</h2>
+@foreach ( )
+{
+    if( .Scene == 2)
+    {
+        if( == true)
+        {
+            hidden == true;
+        }
+    }
+}
+
+<h2>Scene 3</h2>
+@foreach ( )
+{
+    if( .Scene == 3)
+    {
+        if( == true)
+        {
+            hidden == true;
+        }
+    }
+}-->
+
+@code{
+    private List<ShowElement> elements = new();
+
+    protected override void OnInitialized()
+    {
+        elements = Db.ShowElements.ToList();
+    }
+}

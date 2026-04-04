@@ -1,13 +1,91 @@
 @page "/manage"
 @rendermode InteractiveServer
+@inject AppDbContext Db
 
 <PageTitle>Manage</PageTitle>
 
+<h1>Add New Element</h1>
+
+<label for="New-Element-Name" >Element Name</label>
+<input @bind="newElement.Name" placeholder="Element Name"  id="New-Element-Name"/>
+<label for="Show-Section-Select">Show Section</label>
+<select @bind="newElement.ShowSection" placeholder="Section of Show" id="Show-Section-Select">
+    <option value="Scene 1">Scene 1</option>
+    <option value="Scene 2">Scene 2</option>
+    <option value="Scene 3">Scene 3</option>
+</select>
+<button class="btn btn-primary" @onclick="AddElement">Add</button>
+
+<br />
+<br />
 <h1>Manage Element Status</h1>
 
-<div>
-    <ShowElement elementName="Rope Drop"/>
-    <ShowElement elementName="Ball Launch"/>
-    <ShowElement elementName="Flip Truck"/>
-    <ShowElement elementName="Pit 6"/>
-</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Section of Show</th>
+            <th>In Show</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var element in elements)
+        {
+            <tr>
+                <td>@element.Name</td>
+                <td>@element.ShowSection</td>
+                <td>
+                    <input type="checkbox" checked="@element.Status" @onchange="((e) => StatusChange(e, element))" />
+                </td>
+                <td>
+                    <button @onclick="() => DeleteElement(element.Id)">Delete</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@code{
+    private List<ShowElement> elements = new();
+    private ShowElement newElement = new();
+
+    protected override void OnInitialized()
+    {
+        elements = Db.ShowElements.ToList();
+    }
+
+    private void AddElement()
+    {
+        Console.WriteLine("Name: " + newElement.Name + "  Section: " + newElement.ShowSection + "   ID: " + newElement.Id);
+        if (!string.IsNullOrWhiteSpace(newElement.Name) && !string.IsNullOrWhiteSpace(newElement.ShowSection))
+        {
+            Db.ShowElements.Add(newElement);
+            Db.SaveChanges();
+            newElement = new ShowElement();
+            elements = Db.ShowElements.ToList();
+        }
+    }
+
+    private void DeleteElement(int id)
+    {
+        var element = Db.ShowElements.Find(id);
+        if(element != null)
+        {
+            Db.ShowElements.Remove(element);
+            Db.SaveChanges();
+            elements = Db.ShowElements.ToList();
+        }
+    }
+
+    private void StatusChange(ChangeEventArgs e, ShowElement element)
+    {
+        element.Status = (bool)e.Value;
+        if(element != null)
+        {
+            Db.ShowElements.Update(element);
+            Db.SaveChanges();
+        }
+    }
+}

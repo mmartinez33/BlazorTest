@@ -1,0 +1,12 @@
+﻿
+<div class="status-toggle">
+    <input type="checkbox" checked=@Status style="margin-left: 5px"/>
+    <label>@Name</label>
+</div>
+
+@code {
+    [Parameter]
+    public string Name { get; set; } = "";
+    [Parameter]
+    public bool Status { get; set; } = false;
+}
