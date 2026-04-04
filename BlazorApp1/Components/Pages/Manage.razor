@@ -20,11 +20,16 @@
 <br />
 <h1>Manage Element Status</h1>
 
+<h2>Scene 1</h2>
 <table class="table">
+    <colgroup>
+        <col style="width: 200px" />
+        <col style="width: 50px"
+        <col style="width: 150px"
+    </colgroup>
     <thead>
         <tr>
             <th>Name</th>
-            <th>Section of Show</th>
             <th>In Show</th>
             <th>Actions</th>
         </tr>
@@ -32,20 +37,87 @@
     <tbody>
         @foreach (var element in elements)
         {
-            <tr>
-                <td>@element.Name</td>
-                <td>@element.ShowSection</td>
-                <td>
-                    <input type="checkbox" checked="@element.Status" @onchange="((e) => StatusChange(e, element))" />
-                </td>
-                <td>
-                    <button @onclick="() => DeleteElement(element.Id)">Delete</button>
-                </td>
-            </tr>
+            if (element.ShowSection == "Scene 1")
+            {
+                <tr>
+                    <td>@element.Name</td>
+                    <td>
+                        <input type="checkbox" checked="@element.Status" @onchange="((e) => StatusChange(e, element))" />
+                    </td>
+                    <td>
+                        <button @onclick="() => DeleteElement(element.Id)">Delete</button>
+                    </td>
+                </tr>
+            }
         }
     </tbody>
 </table>
 
+<h2>Scene 2</h2>
+<table class="table">
+    <colgroup>
+        <col style="width: 200px" />
+        <col style="width: 50px"
+        <col style="width: 150px"
+    </colgroup>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>In Show</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var element in elements)
+        {
+            if (element.ShowSection == "Scene 2")
+            {
+                <tr>
+                    <td>@element.Name</td>
+                    <td>
+                        <input type="checkbox" checked="@element.Status" @onchange="((e) => StatusChange(e, element))" />
+                    </td>
+                    <td>
+                        <button @onclick="() => DeleteElement(element.Id)">Delete</button>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<h2>Scene 3</h2>
+<table class="table">
+    <colgroup>
+        <col style="width: 200px" />
+        <col style="width: 50px"
+        <col style="width: 150px"
+    </colgroup>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>In Show</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var element in elements)
+        {
+            if (element.ShowSection == "Scene 3")
+            {
+                <tr>
+                    <td>@element.Name</td>
+                    <td>
+                        <input type="checkbox" checked="@element.Status" @onchange="((e) => StatusChange(e, element))" />
+                    </td>
+                    <td>
+                        <button @onclick="() => DeleteElement(element.Id)">Delete</button>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
 
 @code{
     private List<ShowElement> elements = new();
@@ -58,7 +130,6 @@
 
     private void AddElement()
     {
-        Console.WriteLine("Name: " + newElement.Name + "  Section: " + newElement.ShowSection + "   ID: " + newElement.Id);
         if (!string.IsNullOrWhiteSpace(newElement.Name) && !string.IsNullOrWhiteSpace(newElement.ShowSection))
         {
             Db.ShowElements.Add(newElement);
