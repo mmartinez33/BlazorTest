@@ -7,8 +7,8 @@ using System.Security.Cryptography;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-var connectionString = "Server = localhost; Uid = root; Password = epic89; Port = 3306; database = show_elements; ";
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+//var connectionString = "Server = localhost; Uid = root; Password = epic89; Port = 3306; database = show_elements; ";
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
@@ -27,6 +27,7 @@ else
 
 builder.Services.AddRazorPages();  // Added from CoPilot Search about MySQL
 builder.Services.AddServerSideBlazor();  // Added from CoPilot Search about MySQL
+builder.Services.AddSignalR();  // My Custom Hubs
 
 var app = builder.Build();
 
@@ -49,6 +50,7 @@ app.UseEndpoints(endpoints =>
 });
 
 //app.MapBlazorHub();  // Added from CoPilot Search about MySQL
+//app.MapHub<StatusHub>("/statushub"); // My Status Hub
 //app.MapFallbackToPage("/_Host");  // Added from CoPilot Search about MySQL
 
 app.UseHttpsRedirection();
