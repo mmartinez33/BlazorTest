@@ -24,13 +24,13 @@
 <table class="table">
     <colgroup>
         <col style="width: 200px" />
-        <col style="width: 50px"
-        <col style="width: 150px"
+        <col style="width: 50px" />
+        <col style="width: 150px" />
     </colgroup>
     <thead>
         <tr>
             <th>Name</th>
-            <th>In Show</th>
+            <th>Out Of Show</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -42,7 +42,7 @@
                 <tr>
                     <td>@element.Name</td>
                     <td>
-                        <input type="checkbox" checked="@element.Status" @onchange="((e) => StatusChange(e, element))" />
+                        <input type="checkbox" checked="@element.OutOfShow" @onchange="((e) => StatusChange(e, element))" />
                     </td>
                     <td>
                         <button @onclick="() => DeleteElement(element.Id)">Delete</button>
@@ -57,13 +57,13 @@
 <table class="table">
     <colgroup>
         <col style="width: 200px" />
-        <col style="width: 50px"
-        <col style="width: 150px"
+        <col style="width: 50px" />
+        <col style="width: 150px" />
     </colgroup>
     <thead>
         <tr>
             <th>Name</th>
-            <th>In Show</th>
+            <th>Out Of Show</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -75,7 +75,7 @@
                 <tr>
                     <td>@element.Name</td>
                     <td>
-                        <input type="checkbox" checked="@element.Status" @onchange="((e) => StatusChange(e, element))" />
+                        <input type="checkbox" checked="@element.OutOfShow" @onchange="((e) => StatusChange(e, element))" />
                     </td>
                     <td>
                         <button @onclick="() => DeleteElement(element.Id)">Delete</button>
@@ -90,13 +90,13 @@
 <table class="table">
     <colgroup>
         <col style="width: 200px" />
-        <col style="width: 50px"
-        <col style="width: 150px"
+        <col style="width: 50px" />
+        <col style="width: 150px" />
     </colgroup>
     <thead>
         <tr>
             <th>Name</th>
-            <th>In Show</th>
+            <th>Out Of Show</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -108,7 +108,7 @@
                 <tr>
                     <td>@element.Name</td>
                     <td>
-                        <input type="checkbox" checked="@element.Status" @onchange="((e) => StatusChange(e, element))" />
+                        <input type="checkbox" checked="@element.OutOfShow" @onchange="((e) => StatusChange(e, element))" />
                     </td>
                     <td>
                         <button @onclick="() => DeleteElement(element.Id)">Delete</button>
@@ -141,6 +141,7 @@
 
     private void DeleteElement(int id)
     {
+
         var element = Db.ShowElements.Find(id);
         if(element != null)
         {
@@ -152,7 +153,7 @@
 
     private void StatusChange(ChangeEventArgs e, ShowElement element)
     {
-        element.Status = (bool)e.Value;
+        element.OutOfShow = (bool)e.Value;
         if(element != null)
         {
             Db.ShowElements.Update(element);

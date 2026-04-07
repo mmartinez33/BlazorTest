@@ -2,9 +2,9 @@
 @rendermode InteractiveServer
 @inject AppDbContext Db
 
-<PageTitle>Status</PageTitle>
+<PageTitle>Show Status</PageTitle>
 
-<h1>Out Of Show</h1>
+<h1>Show Status</h1>
 
 <table class="table">
     <thead>
@@ -15,7 +15,7 @@
     <tbody>
         @foreach (var element in elements)
         {
-            @if (element.Status == false)
+            @if (element.OutOfShow == true)
             {
                 @if (element.ShowSection == "Scene 1")
                 {
@@ -37,7 +37,7 @@
     <tbody>
         @foreach (var element in elements)
         {
-            @if (element.Status == false)
+            @if (element.OutOfShow == true)
             {
                 @if (element.ShowSection == "Scene 2")
                 {
@@ -59,7 +59,7 @@
     <tbody>
         @foreach (var element in elements)
         {
-            @if (element.Status == false)
+            @if (element.OutOfShow == true)
             {
                 @if (element.ShowSection == "Scene 3")
                 {

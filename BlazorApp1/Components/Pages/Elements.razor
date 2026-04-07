@@ -1,7 +1,73 @@
 ﻿@page "/elements"
+@rendermode InteractiveServer
+@inject AppDbContext Db
 
-<h3>Elements</h3>
+<PageTitle>Show Elements</PageTitle>
+
+<h1>Show Elements</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Scene 1</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var element in elements)
+        {
+            @if (element.ShowSection == "Scene 1")
+            {
+                <tr>
+                    <td>@element.Name</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Scene 2</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var element in elements)
+        {
+            @if (element.ShowSection == "Scene 2")
+            {
+                <tr>
+                    <td>@element.Name</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Scene 3</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var element in elements)
+        {
+            @if (element.ShowSection == "Scene 3")
+            {
+                <tr>
+                    <td>@element.Name</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
 
 @code {
+    private List<ShowElement> elements = new();
 
+    protected override void OnInitialized()
+    {
+        elements = Db.ShowElements.ToList();
+    }
 }

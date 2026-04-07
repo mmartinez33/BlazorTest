@@ -160,10 +160,10 @@ C:\Users\martm923\OneDrive - The Walt Disney Company\Documents\GitHub\BlazorTest
 C:\Users\martm923\OneDrive - The Walt Disney Company\Documents\GitHub\BlazorTest\BlazorApp1\obj\Debug\net9.0\staticwebassets.development.json
 C:\Users\martm923\OneDrive - The Walt Disney Company\Documents\GitHub\BlazorTest\BlazorApp1\obj\Debug\net9.0\staticwebassets.build.endpoints.json
 C:\Users\martm923\OneDrive - The Walt Disney Company\Documents\GitHub\BlazorTest\BlazorApp1\obj\Debug\net9.0\swae.build.ex.cache
-C:\Users\martm923\OneDrive - The Walt Disney Company\Documents\GitHub\BlazorTest\BlazorApp1\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\Users\martm923\OneDrive - The Walt Disney Company\Documents\GitHub\BlazorTest\BlazorApp1\obj\Debug\net9.0\BlazorApp1.csproj.Up2Date
 C:\Users\martm923\OneDrive - The Walt Disney Company\Documents\GitHub\BlazorTest\BlazorApp1\obj\Debug\net9.0\BlazorApp1.dll
 C:\Users\martm923\OneDrive - The Walt Disney Company\Documents\GitHub\BlazorTest\BlazorApp1\obj\Debug\net9.0\refint\BlazorApp1.dll
 C:\Users\martm923\OneDrive - The Walt Disney Company\Documents\GitHub\BlazorTest\BlazorApp1\obj\Debug\net9.0\BlazorApp1.pdb
 C:\Users\martm923\OneDrive - The Walt Disney Company\Documents\GitHub\BlazorTest\BlazorApp1\obj\Debug\net9.0\BlazorApp1.genruntimeconfig.cache
 C:\Users\martm923\OneDrive - The Walt Disney Company\Documents\GitHub\BlazorTest\BlazorApp1\obj\Debug\net9.0\ref\BlazorApp1.dll
+C:\Users\martm923\OneDrive - The Walt Disney Company\Documents\GitHub\BlazorTest\BlazorApp1\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

@@ -11,6 +11,6 @@ namespace BlazorApp1.Models
         [Required]
         public string Name { get; set; } = String.Empty;
         public string ShowSection { get; set; } = String.Empty;
-        public bool Status { get; set; } = false;
+        public bool OutOfShow { get; set; } = false;
     }
 }
